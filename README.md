@@ -46,7 +46,7 @@ muntaha-portfolio/
 No build step needed — open directly in a browser.
 
 ```bash
-git clone https://github.com/your-username/muntaha-portfolio.git
+ https://sheikhsiddique722-sketch.github.io/muntaha-portfolio-/
 cd muntaha-portfolio
 # open index.html in your browser
 Or drag index.html into any browser.
@@ -57,8 +57,6 @@ Muntaha Shafique
 muntahashafique6@gmail.com
 
 Karachi, Pakistan
-
-LinkedIn · GitHub · Fiverr · Upwork
 
 © 2025 Muntaha Shafique — Crafted with care in HTML, CSS & JavaScript.
 

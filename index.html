@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muntaha Shafique — Frontend Developer & AI Enthusiast</title>
+<meta name="description" content="Portfolio of Muntaha Shafique — frontend developer crafting elegant interfaces at the intersection of design and AI." />
+
+<!-- Typography: Fraunces (editorial serif) + Geist (clean modern sans) + Instrument Serif (italic accents) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- scroll progress bar -->
+<div id="scroll-progress"></div>
+
+<!-- preloader -->
+<div id="preloader">
+  <div class="preloader__inner">
+    <div class="preloader__brand">M<span>.</span></div>
+    <div class="preloader__sub">Muntaha Shafique — Portfolio</div>
+    <div class="preloader__bar"><div class="preloader__fill"></div></div>
+    <div class="preloader__hint">Initialising experience...</div>
+  </div>
+</div>
+
+<!-- scroll pill -->
+<div id="scroll-pill">
+  <div class="pill__section" id="pill-label">00 — Intro</div>
+  <div class="pill__track"><div class="pill__fill" id="pill-fill"></div></div>
+</div>
+
+<!-- custom 3D cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ambient aurora -->
+<div class="aurora" aria-hidden="true">
+  <div class="aurora__blob aurora__blob--1"></div>
+  <div class="aurora__blob aurora__blob--2"></div>
+  <div class="aurora__blob aurora__blob--3"></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav__brand">Muntaha<span style="font-style:italic;font-family:var(--font-italic);font-weight:400;">.s</span></a>
+  <div class="nav__links">
+    <a href="#about" class="nav__link">About</a>
+    <a href="#skills" class="nav__link">Skills</a>
+    <a href="#work" class="nav__link">Work</a>
+    <a href="#journey" class="nav__link">Journey</a>
+  </div>
+  <a href="#contact" class="nav__cta">Let's talk →</a>
+  <button class="nav__theme" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="theme-icon theme-icon--sun">☀</span>
+    <span class="theme-icon theme-icon--moon">☾</span>
+  </button>
+  <button class="nav__burger" id="nav-burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav__mobile" id="nav-mobile">
+  <a href="#about" class="nav__mobile-link">About</a>
+  <a href="#skills" class="nav__mobile-link">Skills</a>
+  <a href="#work" class="nav__mobile-link">Work</a>
+  <a href="#journey" class="nav__mobile-link">Journey</a>
+  <a href="#contact" class="nav__mobile-cta">Let's talk →</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+<canvas id="hero-canvas"></canvas>
+  <div class="shell">
+    <div class="hero__grid">
+      <div class="hero__intro">
+        <div class="hero__eyebrow reveal">
+          <span class="dot"></span>
+          Available for select projects · Karachi, PK
+        </div>
+
+        <h1 class="hero__title reveal reveal--delay-1">
+          Designing<br>
+          <span class="underline-mark">interfaces</span> with<br>
+          a quiet sense of<br>
+          <span class="italic">intelligence.</span>
+        </h1>
+
+        <div class="hero__typed reveal reveal--delay-2">
+          <span id="typed"></span><span class="hero__cursor"></span>
+        </div>
+
+        <p class="hero__desc reveal reveal--delay-3">
+          I'm <strong>Muntaha Shafique</strong> — a frontend developer in training and an AI enthusiast,
+          building elegant, responsive web experiences with HTML, CSS, JavaScript and Bootstrap, while exploring how modern web technologies and AI can shape the next generation of interfaces.
+        </p>
+
+        <div class="hero__actions reveal reveal--delay-4">
+          <a href="#work" class="btn btn--primary">
+            View selected work
+            <span class="arrow">↗</span>
+          </a>
+          <a href="#contact" class="btn btn--ghost">
+            Get in touch
+          </a>
+        </div>
+
+        <div class="hero__stats reveal reveal--delay-4">
+          <div class="stat">
+            <div class="stat__num" data-target="12" data-suffix="+">0</div>
+            <div class="stat__label">Projects Crafted</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-target="4" data-suffix="">0</div>
+            <div class="stat__label">Core Stacks</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">∞</div>
+            <div class="stat__label">Curiosity for AI</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal reveal--delay-2" style="position:relative;">
+        <div class="hero__portrait">
+          <img src="assets/image.jpeg" alt="Portrait of Muntaha" id="portrait-main"/>
+          <div class="hero__portrait-tag">
+            <div>
+              <div class="tag-label">Currently</div>
+              <div class="tag-value">Building & <em>learning</em></div>
+            </div>
+            <div style="text-align:right;">
+              <div class="tag-label">Est.</div>
+              <div class="tag-value">2025</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__badge" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <defs>
+              <path id="circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/>
+            </defs>
+            <text style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:0.18em;fill:var(--off-white);">
+              <textPath href="#circle">FRONTEND · AI ENTHUSIAST · FRONTEND · AI ENTHUSIAST · </textPath>
+            </text>
+          </svg>
+          <div class="inner">M.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__left">
+        <div class="section-num reveal">01 — About</div>
+        <h2 class="section-title reveal reveal--delay-1">A developer who<br>thinks <span class="italic">like a designer.</span></h2>
+      </div>
+      <p class="section-sub reveal reveal--delay-2">
+        The story behind the work — what I value, what I'm chasing, and the way I approach building for the web.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__media reveal">
+        <img src="assets/image.jpeg" alt="Muntaha Shafique" class="img-1" id="img-about-1" style="width:100%;height:100%;object-fit:cover;border-radius:24px;"/>
+      </div>
+
+      <div class="about__body reveal reveal--delay-1">
+        <p>
+          I'm a <span class="italic">frontend developer student</span> passionate about crafting clean, thoughtful, and modern web experiences. I enjoy the quiet details of the web — the way interactions feel, how typography shapes emotion, and how thoughtful layouts create clarity.
+        </p>
+        <p class="small">
+          My current toolkit includes <strong>HTML, CSS, JavaScript and Bootstrap, JSON, and database fundamentals</strong>,while I’m also learning Node.js and backend development concepts through practical coursework and projects.
+        </p>
+        <p class="small">
+         Alongside web development, I’m deeply interested in AI and intelligent interfaces — especially how modern AI can enhance creativity, user experience, and digital interaction.
+        </p>
+
+         <p class="small">
+          I see every project as an opportunity to combine clean code, visual balance, and meaningful user experience.
+        </p>
+
+         <p class="small">
+           Beyond coding, I spend time exploring modern web trends, studying interfaces I admire, and learning how great digital products are designed and built.
+        </p>
+
+        <div class="about__quick">
+          <div class="quick__item">
+            <div class="quick__label">Based in</div>
+            <div class="quick__value">Karachi, Pakistan</div>
+          </div>
+          <div class="quick__item">
+            <div class="quick__label">Focus</div>
+            <div class="quick__value">Frontend · AI · UI/UX Craft</div>
+          </div>
+          <div class="quick__item">
+            <div class="quick__label">Studying</div>
+            <div class="quick__value">Modern Web Technologies . Databases</div>
+          </div>
+          <div class="quick__item">
+            <div class="quick__label">Open to</div>
+            <div class="quick__value">Internships . Freelance Projects . Collabs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__left">
+        <div class="section-num reveal">02 — Capabilities</div>
+        <h2 class="section-title reveal reveal--delay-1">The stack that<br>shapes my <span class="italic">craft.</span></h2>
+      </div>
+      <p class="section-sub reveal reveal--delay-2">
+        Tools I work with daily, plus the technologies I'm currently learning to expand into.
+      </p>
+    </div>
+
+    <div class="skills__cluster">
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">&lt;/&gt;</div>
+        <h3 class="skill-card__title">Frontend Development</h3>
+        <p class="skill-card__desc">Building responsive, interactive, and visually refined interfaces using modern web technologies and clean structure.</p>
+        <div class="skill-card__bar"><div class="skill-card__bar-fill" data-fill="90"></div></div>
+        <div class="skill-card__meta"><span>Proficiency</span><span>95%</span></div>
+      </div>
+
+      <div class="skill-card reveal reveal--delay-1">
+        <div class="skill-card__icon">{ }</div>
+        <h3 class="skill-card__title">UI & Visual Craft</h3>
+        <p class="skill-card__desc">Designing layouts with attention to spacing, typography, motion, hierarchy, and overall user feel.</p>
+        <div class="skill-card__bar"><div class="skill-card__bar-fill" data-fill="85"></div></div>
+        <div class="skill-card__meta"><span>Proficiency</span><span>85%</span></div>
+      </div>
+
+      <div class="skill-card reveal reveal--delay-2">
+        <div class="skill-card__icon">R</div>
+        <h3 class="skill-card__title">Responsive Systems</h3>
+        <p class="skill-card__desc">Creating interfaces that adapt fluidly across desktop, tablet, and mobile experiences.</p>
+        <div class="skill-card__bar"><div class="skill-card__bar-fill" data-fill="75"></div></div>
+        <div class="skill-card__meta"><span>Proficiency</span><span>75%</span></div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">J</div>
+        <h3 class="skill-card__title">JavaScript Interaction</h3>
+        <p class="skill-card__desc">Developing smooth interactions, dynamic UI behavior, DOM manipulation, and lightweight application logic.</p>
+        <div class="skill-card__bar"><div class="skill-card__bar-fill" data-fill="80"></div></div>
+        <div class="skill-card__meta"><span>Proficiency</span><span>80%</span></div>
+      </div>
+
+      <div class="skill-card reveal reveal--delay-1">
+        <div class="skill-card__icon">AI</div>
+        <h3 class="skill-card__title">AI Curiosity & Prompt Design</h3>
+        <p class="skill-card__desc">Exploring how AI tools, LLMs, and prompt engineering can enhance creativity, workflows, and user experiences.</p>
+        <div class="skill-card__bar"><div class="skill-card__bar-fill" data-fill="65"></div></div>
+        <div class="skill-card__meta"><span>Exploring</span><span>65%</span></div>
+      </div>
+
+      <div class="skill-card reveal reveal--delay-2">
+        <div class="skill-card__icon">B</div>
+        <h3 class="skill-card__title">Learning Backend Foundations</h3>
+        <p class="skill-card__desc">Currently expanding into Node.js, JSON, databases, and modern backend concepts to grow into a more complete developer.</p>
+        <div class="skill-card__bar"><div class="skill-card__bar-fill" data-fill="78"></div></div>
+        <div class="skill-card__meta"><span>Proficiency</span><span>75%</span></div>
+      </div>
+    </div>
+
+    <!-- marquee of tools -->
+    <div class="skill-marquee reveal">
+      <div class="skill-marquee__track">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Bootstrap 5</span>
+        <span class="skill-tag">Responsive Design</span>
+        <span class="skill-tag">Glassmorphism</span>
+        <span class="skill-tag">Animations</span>
+        <span class="skill-tag">Git &amp; GitHub</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">AI Tools</span>
+        <span class="skill-tag">Prompt Design</span>
+        <span class="skill-tag">VS Code</span>
+        <!-- duplicate for seamless loop -->
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Bootstrap 5</span>
+        <span class="skill-tag">Responsive Design</span>
+        <span class="skill-tag">Glassmorphism</span>
+        <span class="skill-tag">Animations</span>
+        <span class="skill-tag">Git &amp; GitHub</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">AI Tools</span>
+        <span class="skill-tag">Prompt Design</span>
+        <span class="skill-tag">VS Code</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER STRIP -->
+<!-- PROJECTS -->
+<section id="work">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__left">
+        <div class="section-num reveal">03 — Selected Work</div>
+        <h2 class="section-title reveal reveal--delay-1">Recent projects,<br>thoughtfully <span class="italic">composed.</span></h2>
+      </div>
+      <p class="section-sub reveal reveal--delay-2">
+        A curated selection of student projects and personal explorations — where I practice my craft and chase ideas.
+      </p>
+    </div>
+
+    <div class="projects__grid">
+
+      <!-- Glassmorphism Calculator -->
+      <article class="project project--md reveal" data-url="https://sheikhsiddique722-sketch.github.io/glassmorphism-calculator/">
+        <div class="project__visual">
+          <img src="https://s0.wp.com/mshots/v1/https://sheikhsiddique722-sketch.github.io/glassmorphism-calculator/?w=900&h=600" alt="Glassmorphism Calculator" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#667eea,#764ba2)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Glass Calc <span class="italic">— glassmorphism calculator.</span></h3>
+            <p class="project__desc">A sleek calculator built with a frosted-glass aesthetic — pure CSS glassmorphism paired with smooth JavaScript logic.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+              <span class="project__tag">Glassmorphism</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Nexus AI SaaS -->
+      <article class="project project--md reveal reveal--delay-1" data-url="https://sheikhsiddique722-sketch.github.io/nexus-ai-saas/">
+        <div class="project__visual">
+          <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?w=900&h=600&fit=crop&q=80" alt="Nexus AI SaaS" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a0812,#13103a,#1e1b4b)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Nexus <span class="italic">— AI SaaS platform.</span></h3>
+            <p class="project__desc">A modern AI-powered SaaS landing page with a sleek dark aesthetic, smooth animations and a bold futuristic design.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+              <span class="project__tag">AI · SaaS</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- featured 1 -->
+      <article class="project project--lg reveal" data-url="https://sheikhsiddique722-sketch.github.io/lumen-ai-writing-platform/">
+        <div class="project__visual">
+          <img src="https://s0.wp.com/mshots/v1/https://sheikhsiddique722-sketch.github.io/lumen-ai-writing-platform/?w=900&h=600" alt="Lumen AI Writing Platform" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1F1F23,#2A2A30)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Personal</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Lumen — an AI <span class="italic">writing companion.</span></h3>
+            <p class="project__desc">A minimalist web interface that pairs a writing surface with a contextual AI sidebar. Built with vanilla JS and a soft, focus-first UI.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+              <span class="project__tag">AI · LLM</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- small 1 -->
+      <article class="project project--sm reveal reveal--delay-1" data-url="https://sheikhsiddique722-sketch.github.io/developer-portfolio/">
+        <div class="project__visual">
+          <img src="https://s0.wp.com/mshots/v1/https://sheikhsiddique722-sketch.github.io/developer-portfolio/?w=900&h=600" alt="Developer Portfolio" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0f0c29,#302b63,#24243e)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Folio <span class="italic">— developer portfolio.</span></h3>
+            <p class="project__desc">A magazine-inspired developer portfolio with cinematic motion and a soft luxury aesthetic.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- wide hero project -->
+      <article class="project project--wide reveal" data-url="https://sheikhsiddique722-sketch.github.io/cascade-ai-dashboard/">
+        <div class="project__visual">
+          <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Dashboard preview" id="project-img-2"/>
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div style="max-width:560px;">
+            <h3 class="project__title">Cascade — a <span class="italic">responsive</span> dashboard.</h3>
+            <p class="project__desc">A Bootstrap-powered admin dashboard featuring fluid grids, dark / light theming and a component-first mindset.</p>
+            <div class="project__tags">
+              <span class="project__tag">Bootstrap</span>
+              <span class="project__tag">JavaScript</span>
+              <span class="project__tag">Responsive</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- medium pair -->
+      <article class="project project--md reveal" data-url="https://sheikhsiddique722-sketch.github.io/pulse-css-motion-library/">
+        <div class="project__visual">
+          <img src="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Pulse CSS Motion Library" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#667eea,#764ba2)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Pulse — CSS <span class="italic">motion library.</span></h3>
+            <p class="project__desc">A growing collection of pure-CSS animations and micro-interactions that I use as building blocks.</p>
+            <div class="project__tags">
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">Animation</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project--md reveal reveal--delay-1" data-url="https://sheikhsiddique722-sketch.github.io/atelier/">
+        <div class="project__visual">
+          <img src="https://s0.wp.com/mshots/v1/https://sheikhsiddique722-sketch.github.io/atelier/?w=900&h=600" alt="Atelier Studio Site" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Atelier — a <span class="italic">studio site.</span></h3>
+            <p class="project__desc">A minimal landing page concept for an imagined design studio — type as the hero, motion as the texture.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">UI</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Modern Timer App -->
+      <article class="project project--md reveal" data-url="https://sheikhsiddique722-sketch.github.io/modern-timer-app/">
+        <div class="project__visual">
+          <img src="https://s0.wp.com/mshots/v1/https://sheikhsiddique722-sketch.github.io/modern-timer-app/?w=900&h=600" alt="Modern Timer App" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0f2027,#203a43,#2c5364)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Nova Timer <span class="italic">— modern timer app.</span></h3>
+            <p class="project__desc">A clean, minimal countdown timer with a modern UI, keyboard shortcuts and smooth animations.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+              <span class="project__tag">Animation</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Toyo Toys -->
+      <article class="project project--md reveal reveal--delay-1" data-url="https://sheikhsiddique722-sketch.github.io/toyo-toys-website/">
+        <div class="project__visual">
+          <img src="https://sheikhsiddique722-sketch.github.io/toyo-toys-website/assets/photos/banner1.jpeg" alt="Toyo Toys Website" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#f857a6,#ff5858)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Toyo Toys <span class="italic">— toy store.</span></h3>
+            <p class="project__desc">A vibrant and playful toy store website with a fun, colourful design and a smooth, responsive shopping experience.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- DriveX Motors -->
+      <article class="project project--md reveal" data-url="https://sheikhsiddique722-sketch.github.io/drivex-motors-showroom/">
+        <div class="project__visual">
+          <img src="https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="DriveX Motors Showroom" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">DriveX <span class="italic">— Motors Showroom.</span></h3>
+            <p class="project__desc">A premium car showroom website featuring sleek vehicle listings, responsive layout and a bold automotive aesthetic.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Meridian Banking UI -->
+      <article class="project project--md reveal" data-url="https://sheikhsiddique722-sketch.github.io/meridian-banking-ui/">
+        <div class="project__visual">
+          <img src="https://s0.wp.com/mshots/v1/https://sheikhsiddique722-sketch.github.io/meridian-banking-ui/?w=900&h=600" alt="Meridian Banking UI" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0f2027,#1a3a5c,#2c5364)'" />
+        </div>
+        <div class="project__body">
+          <div class="project__top">
+            <span>2025 / Web Project</span>
+            <span class="badge">Live ↗</span>
+          </div>
+          <div>
+            <h3 class="project__title">Meridian <span class="italic">— Banking UI.</span></h3>
+            <p class="project__desc">A clean and professional banking dashboard UI with a modern financial aesthetic, intuitive layout and polished interface components.</p>
+            <div class="project__tags">
+              <span class="project__tag">HTML</span>
+              <span class="project__tag">CSS</span>
+              <span class="project__tag">JavaScript</span>
+              <span class="project__tag">UI Design</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="journey">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-head__left">
+        <div class="section-num reveal">04 — Journey</div>
+        <h2 class="section-title reveal reveal--delay-1">Experience &amp;<br><span class="italic">education.</span></h2>
+      </div>
+      <p class="section-sub reveal reveal--delay-2">
+       The path so far — learning, experimenting, and gradually shaping my skills through practice, curiosity, and consistent building.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-item__year">2025</div>
+        <div class="tl-card">
+          <span class="tl-card__tag">Current</span>
+          <h3 class="tl-card__title">Software Engineering Student</h3>
+          <div class="tl-card__org">Aptech Learning Pakistan · Karachi</div>
+          <p> Currently studying software engineering with a focus on modern web development, frontend technologies, and practical project building.</p>
+          <br> 
+          <div class="tl-card__org">Learning:</div>
+           <p>HTML · CSS · JavaScript · Bootstrap · JSON · Database Fundamentals · Node.js Basics</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-item__year">2025</div>
+        <div class="tl-card">
+          <span class="tl-card__tag">Learning</span>
+          <h3 class="tl-card__title">Independent Frontend Practice</h3>
+          <div class="tl-card__org">Personal Projects · UI Exploration</div>
+          <p>Designing and developing responsive web interfaces while improving frontend fundamentals through hands-on projects, UI experiments, and creative coding practice.</p>
+        <br> 
+          <div class="tl-card__org">Focus areas:</div>
+           <p>Responsive Design · JavaScript Interaction · UI Craft · Motion & Layout Systems</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-item__year">2025</div>
+        <div class="tl-card">
+          <span class="tl-card__tag">Self Study</span>
+          <h3 class="tl-card__title">AI & Modern Web Exploration</h3>
+          <div class="tl-card__org">LLMs · Prompt Design · AI-Assisted Workflows</div>
+          <p class="tl-card__desc">Exploring how AI tools and modern interfaces can work together to create smarter, more human-centered digital experiences.</p>
+       <br> 
+          <div class="tl-card__org">Areas of interest:</div>
+           <p>Prompt Engineering · AI Tools · Intelligent UX · Creative Workflows</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-item__year">2025</div>
+        <div class="tl-card">
+          <span class="tl-card__tag">The Beginning</span>
+          <h3 class="tl-card__title">First Steps Into Web Development</h3>
+          <div class="tl-card__org">Discovering the web · Where it all began</div>
+          <p class="tl-card__desc">The beginning of the journey in 2025 — first HTML pages, first stylesheets, the moment a static layout suddenly felt like a place I wanted to live.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="shell">
+    <div class="contact-wrap reveal">
+      <canvas id="contact-canvas"></canvas>
+      <div class="contact__grid">
+
+        <!-- LEFT: Info -->
+        <div class="contact__left">
+          <div>
+            <div class="contact__eyebrow">05 — Get in touch</div>
+            <h2 class="contact__title reveal">
+              Let's build<br>something<br>
+              <span class="italic">together.</span>
+              <br>
+              <br>
+
+            </h2>
+            <p class="contact__sub">
+              Whether it's an internship, a collaboration, a personal project or just a friendly hello — I'd love to hear from you.
+            </p>
+          </div>
+
+          <div>
+            <div class="contact__info-cards">
+              <div class="contact__info-card" id="email-card" style="cursor:pointer;" title="Click to copy email">
+                <div class="info-card__icon">✉</div>
+                <div style="flex:1;">
+                  <div class="info-card__label">Email</div>
+                  <div class="info-card__value" id="email-value">muntahashafique6@gmail.com</div>
+                </div>
+                <button class="copy-btn" id="copy-email-btn" aria-label="Copy email">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <div class="contact__info-card">
+                <div class="info-card__icon">📍</div>
+                <div>
+                  <div class="info-card__label">Location</div>
+                  <div class="info-card__value">Karachi, Pakistan</div>
+                </div>
+              </div>
+              <div class="contact__info-card">
+                <div class="info-card__icon">⚡</div>
+                <div>
+                  <div class="info-card__label">Response time</div>
+                  <div class="info-card__value">Usually within 24 hours</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__socials-label">Find me on</div>
+            <div class="socials">
+              <a href="https://www.linkedin.com/in/muntahashafiq/" class="social" target="_blank" rel="noopener">LinkedIn <span class="social__arrow">↗</span></a>
+              <a href="https://github.com/sheikhsiddique722-sketch" class="social" target="_blank" rel="noopener">GitHub <span class="social__arrow">↗</span></a>
+              <a href="https://www.fiverr.com/moon_sidd/buying?source=avatar_menu_profile" class="social" target="_blank" rel="noopener">Fiverr <span class="social__arrow">↗</span></a>
+              <a href="https://www.upwork.com/freelancers/~010b369fbbed34cdb7" class="social" target="_blank" rel="noopener">Upwork<span class="social__arrow">↗</span></a>
+            </div>
+
+            <div class="contact__avail">
+              <span class="dot"></span>
+              <span id="local-time">Karachi · loading…</span>
+              &nbsp;·&nbsp; Open to opportunities
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="contact__right">
+          <div class="contact-form__heading">Send a message</div>
+          <p class="contact-form__sub">Fill in the form and I'll get back to you as soon as possible.</p>
+
+          <form class="contact-form" action="https://formspree.io/f/mnjrlrjg" method="POST" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="cf-name">Your name</label>
+                <input class="form-input" type="text" id="cf-name" name="name" placeholder="e.g. Muntaha Shafique" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-email">Email address</label>
+                <input class="form-input" type="email" id="cf-email" name="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cf-subject">Subject</label>
+              <input class="form-input" type="text" id="cf-subject" name="subject" placeholder="What's this about?" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cf-message">Message</label>
+              <textarea class="form-input" id="cf-message" name="message" placeholder="Tell me about your project, idea, or just say hi…" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              <span>Send message</span>
+              <span class="form-submit__icon">↗</span>
+            </button>
+            <p class="form-note" id="form-status">I read every message personally.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="shell foot">
+    <div class="foot__brand">Muntaha Shafique</div>
+    <div>© 2025 — Crafted with care, in HTML, CSS &amp; JavaScript.</div>
+    <div>v1.0 · Karachi → World</div>
+  </div>
+</footer>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" role="status" aria-live="polite">
+  <span id="toast-msg">✓ Email copied!</span>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div class="modal-visual" id="modal-visual"></div>
+    <div class="modal-body">
+      <div class="modal-meta" id="modal-meta"></div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-tags" id="modal-tags"></div>
+      <div class="modal-actions" id="modal-actions"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init({ publicKey: "ulI8iyo8P4ljN6_f4" });
+  })();
+</script>
+</body>
+</html>

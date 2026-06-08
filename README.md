@@ -58,6 +58,6 @@ muntahashafique6@gmail.com
 
 Karachi, Pakistan
 
-© 2025 Muntaha Shafique — Crafted with care in HTML, CSS & JavaScript.
+© 2025 Muntaha Shafique — Crafted with care in HTML, CSS & JavaScript. 
 
 

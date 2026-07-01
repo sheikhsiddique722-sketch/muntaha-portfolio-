@@ -3,7 +3,7 @@
 A personal portfolio website built with pure HTML, CSS, and vanilla JavaScript.
 Live showcase of frontend skills, selected projects, and journey as a developer.
 
-## Features
+## Features 
 
 - Animated preloader with progress bar
 - 3D particle network (Three.js) in the hero section

@@ -1,6 +1,6 @@
 # Muntaha Shafique — Portfolio
 
-A personal portfolio website built with pure HTML, CSS, and vanilla JavaScript.
+A personal portfolio website built with pure HTML, CSS, and vanilla JavaScript. 
 Live showcase of frontend skills, selected projects, and journey as a developer.
 
 ## Features 

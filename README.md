@@ -1,7 +1,7 @@
 # 🌐 Muntaha Portfolio
  
 Welcome to my personal portfolio website! **Muntaha Portfolio** is a modern, responsive, and interactive web portfolio designed to showcase my skills, projects, and journey as a **Software Engineering Student**, **Frontend Developer**, and **Generative AI Enthusiast**.
-
+ 
 This portfolio serves as a central hub where recruiters, clients, and fellow developers can explore my work, discover my technical expertise, and learn more about my passion for building modern digital experiences. A well-structured portfolio helps present projects, technical skills, and professional growth in a clear and engaging way, which is the goal of this website.
 
 ---
